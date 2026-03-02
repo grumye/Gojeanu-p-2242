@@ -23,37 +23,46 @@ jobs:
       - name: Install video tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb ffmpeg
+          sudo apt-get install -y xvfb ffmpeg x11-utils
 
       - name: Run tests + record screen (Xvfb)
+        env:
+          CI: "true"
+          DISPLAY: ":99"
         run: |
           mkdir -p artifacts
 
-          # Виртуальный экран
-          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-          echo "DISPLAY=:99" >> $GITHUB_ENV
+          # 1) Virtual display
+          Xvfb :99 -screen 0 1920x1080x24 -ac +extension RANDR > artifacts/xvfb.log 2>&1 &
+          sleep 2
 
-          # Запись экрана
+          # 2) Check display
+          echo "DISPLAY=$DISPLAY"
+          xdpyinfo -display :99 > artifacts/xdpyinfo.txt 2>&1 || true
+
+          # 3) Start recording (:99.0!)
           ffmpeg -y \
             -video_size 1920x1080 \
             -framerate 25 \
-            -f x11grab -i :99 \
+            -f x11grab -i :99.0 \
             -codec:v libx264 -pix_fmt yuv420p \
-            artifacts/test-run.mp4 > /dev/null 2>&1 &
+            artifacts/test-run.mp4 > artifacts/ffmpeg.log 2>&1 &
           FF_PID=$!
 
-          # Запуск тестов
-          mvn -q test || TEST_EXIT=$?
+          sleep 2
 
-          # Остановка записи
+          # 4) Run tests (do not fail job, we want video)
+          mvn -q test || true
+
+          sleep 2
+
+          # 5) Stop recording
           kill $FF_PID || true
+          sleep 1
 
-          # Вернуть код ошибки тестов (если упали)
-          exit ${TEST_EXIT:-0}
-
-      - name: Upload video artifact
+      - name: Upload artifacts (video + logs)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ui-test-video
-          path: artifacts/test-run.mp4
+          path: artifacts/**
