@@ -1,133 +1,28 @@
-11:57:29.086 [main] INFO  org.example.testing.FormTest - Start test
-12:02:43.630 [main] INFO  org.example.testing.FormTest - Start test
-12:03:11.746 [main] INFO  org.example.testing.FormTest - Start test
-12:17:30.068 [main] INFO  org.example.testing.FormTest - Start test
-12:17:38.276 [main] INFO  org.example.testing.FormTest - Set first name
-12:17:39.459 [main] INFO  org.example.testing.FormTest - Set gender
-12:34:00.415 [main] INFO  org.example.testing.FormTest - Start test
-12:34:07.780 [main] INFO  org.example.testing.FormTest - Set first name
-12:34:08.498 [main] INFO  org.example.testing.FormTest - Set gender
-12:35:04.377 [main] INFO  org.example.testing.FormTest - Start test
-12:35:10.627 [main] INFO  org.example.testing.FormTest - Set first name
-12:35:12.605 [main] INFO  org.example.testing.FormTest - Set gender
-12:40:52.048 [main] INFO  org.example.testing.FormTest - Start test
-12:40:57.954 [main] INFO  org.example.testing.FormTest - Set first name
-12:40:58.845 [main] INFO  org.example.testing.FormTest - Set gender
-12:41:25.445 [main] INFO  org.example.testing.FormTest - Start test
-12:41:31.254 [main] INFO  org.example.testing.FormTest - Set first name
-12:41:32.359 [main] INFO  org.example.testing.FormTest - Set gender
-12:42:00.430 [main] INFO  org.example.testing.FormTest - Start test
-12:42:07.456 [main] INFO  org.example.testing.FormTest - Set first name
-12:42:08.581 [main] INFO  org.example.testing.FormTest - Set gender
-12:42:51.530 [main] INFO  org.example.testing.FormTest - Start test
-12:42:58.666 [main] INFO  org.example.testing.FormTest - Set first name
-12:42:59.608 [main] INFO  org.example.testing.FormTest - Set gender
-12:44:28.975 [main] INFO  org.example.testing.FormTest - Start test
-12:44:36.618 [main] INFO  org.example.testing.FormTest - Set first name
-12:44:37.392 [main] INFO  org.example.testing.FormTest - Set gender
-12:45:02.252 [main] INFO  org.example.testing.FormTest - Start test
-12:45:08.385 [main] INFO  org.example.testing.FormTest - Set first name
-12:45:09.830 [main] INFO  org.example.testing.FormTest - Set gender
-12:48:03.457 [main] INFO  org.example.testing.FormTest - Start test
-12:48:11.106 [main] INFO  org.example.testing.FormTest - Set first name
-12:48:11.822 [main] INFO  org.example.testing.FormTest - Set gender
-12:49:01.136 [main] INFO  org.example.testing.FormTest - Start test
-12:49:08.238 [main] INFO  org.example.testing.FormTest - Set first name
-12:49:09.049 [main] INFO  org.example.testing.FormTest - Set gender
-12:51:36.767 [main] INFO  org.example.testing.FormTest - Start test
-12:51:43.993 [main] INFO  org.example.testing.FormTest - Set first name
-12:51:44.742 [main] INFO  org.example.testing.FormTest - Set gender
-12:53:18.204 [main] INFO  org.example.testing.FormTest - Start test
-12:53:25.138 [main] INFO  org.example.testing.FormTest - Set first name
-12:53:25.888 [main] INFO  org.example.testing.FormTest - Set gender
-12:53:28.319 [main] INFO  org.example.testing.FormTest - Set state
-12:53:56.119 [main] INFO  org.example.testing.FormTest - Start test
-12:54:14.995 [main] INFO  org.example.testing.FormTest - Start test
-12:56:18.243 [main] INFO  org.example.testing.FormTest - Start test
-13:00:21.872 [main] INFO  org.example.testing.FormTest - Start test
-13:00:27.486 [main] INFO  org.example.testing.FormTest - Set first name
-13:00:28.362 [main] INFO  org.example.testing.FormTest - Set gender
-13:02:48.861 [main] INFO  org.example.testing.FormTest - Start test
-13:02:56.225 [main] INFO  org.example.testing.FormTest - Set first name
-13:02:56.965 [main] INFO  org.example.testing.FormTest - Set gender
-13:04:39.446 [main] INFO  org.example.testing.FormTest - Start test
-13:04:45.081 [main] INFO  org.example.testing.FormTest - Set first name
-13:04:46.393 [main] INFO  org.example.testing.FormTest - Set gender
-13:06:18.691 [main] INFO  org.example.testing.FormTest - Start test
-13:10:20.286 [main] INFO  org.example.testing.FormTest - Start test
-13:10:26.973 [main] INFO  org.example.testing.FormTest - Set first name
-13:10:28.101 [main] INFO  org.example.testing.FormTest - Set gender
-13:11:09.758 [main] INFO  org.example.testing.FormTest - Start test
-13:11:16.090 [main] INFO  org.example.testing.FormTest - Set first name
-13:11:16.878 [main] INFO  org.example.testing.FormTest - Set gender
-13:13:18.242 [main] INFO  org.example.testing.FormTest - Start test
-13:13:24.299 [main] INFO  org.example.testing.FormTest - Set first name
-13:13:25.881 [main] INFO  org.example.testing.FormTest - Set gender
-13:13:28.456 [main] INFO  org.example.testing.FormTest - Set state
-13:20:04.446 [main] INFO  org.example.testing.FormTest - Start test
-13:20:12.211 [main] INFO  org.example.testing.FormTest - Set first name
-13:20:13.160 [main] INFO  org.example.testing.FormTest - Set gender
-13:20:16.375 [main] INFO  org.example.testing.FormTest - Set state
-13:20:49.795 [main] INFO  org.example.testing.FormTest - Start test
-13:20:57.034 [main] INFO  org.example.testing.FormTest - Set first name
-13:20:57.835 [main] INFO  org.example.testing.FormTest - Set gender
-13:21:00.008 [main] INFO  org.example.testing.FormTest - Set state
-13:22:21.643 [main] INFO  org.example.testing.FormTest - Start test
-13:22:28.457 [main] INFO  org.example.testing.FormTest - Set first name
-13:22:29.544 [main] INFO  org.example.testing.FormTest - Set gender
-13:35:52.194 [main] INFO  org.example.testing.FormTest - Start test
-13:35:58.960 [main] INFO  org.example.testing.FormTest - Set first name
-13:35:59.681 [main] INFO  org.example.testing.FormTest - Set gender
-13:36:02.389 [main] INFO  org.example.testing.FormTest - Set state
-13:43:41.148 [main] INFO  org.example.testing.FormTest - Start test
-13:43:48.385 [main] INFO  org.example.testing.FormTest - Set first name
-13:43:49.214 [main] INFO  org.example.testing.FormTest - Set gender
-13:43:51.454 [main] INFO  org.example.testing.FormTest - Set state
-13:48:41.436 [main] INFO  org.example.testing.FormTest - Start test
-13:48:48.057 [main] INFO  org.example.testing.FormTest - Set first name
-13:48:49.882 [main] INFO  org.example.testing.FormTest - Set gender
-13:48:53.420 [main] INFO  org.example.testing.FormTest - Set state
-13:49:23.541 [main] INFO  org.example.testing.FormTest - Start test
-13:49:30.913 [main] INFO  org.example.testing.FormTest - Set first name
-13:49:32.134 [main] INFO  org.example.testing.FormTest - Set gender
-13:51:04.998 [main] INFO  org.example.testing.FormTest - Start test
-13:51:12.412 [main] INFO  org.example.testing.FormTest - Set first name
-13:51:13.493 [main] INFO  org.example.testing.FormTest - Set gender
-13:54:12.574 [main] INFO  org.example.testing.FormTest - Start test
-13:54:19.070 [main] INFO  org.example.testing.FormTest - Set first name
-13:54:20.347 [main] INFO  org.example.testing.FormTest - Set gender
-13:55:59.270 [main] INFO  org.example.testing.FormTest - Start test
-13:56:07.755 [main] INFO  org.example.testing.FormTest - Set first name
-13:56:09.464 [main] INFO  org.example.testing.FormTest - Set gender
-13:56:13.928 [main] INFO  org.example.testing.FormTest - Set state
-13:56:39.922 [main] INFO  org.example.testing.FormTest - Start test
-13:57:00.196 [main] INFO  org.example.testing.FormTest - Set first name
-13:57:01.302 [main] INFO  org.example.testing.FormTest - Set gender
-13:57:04.761 [main] INFO  org.example.testing.FormTest - Set state
-13:58:25.682 [main] INFO  org.example.testing.FormTest - Start test
-13:58:33.380 [main] INFO  org.example.testing.FormTest - Set first name
-13:58:34.510 [main] INFO  org.example.testing.FormTest - Set gender
-13:58:38.213 [main] INFO  org.example.testing.FormTest - Set state
-14:00:15.973 [main] INFO  org.example.testing.FormTest - Start test
-14:00:24.639 [main] INFO  org.example.testing.FormTest - Set first name
-14:00:25.780 [main] INFO  org.example.testing.FormTest - Set gender
-14:00:30.006 [main] INFO  org.example.testing.FormTest - Set state
-14:02:03.285 [main] INFO  org.example.testing.FormTest - Start test
-14:02:10.939 [main] INFO  org.example.testing.FormTest - Set first name
-14:02:11.919 [main] INFO  org.example.testing.FormTest - Set gender
-14:02:15.777 [main] INFO  org.example.testing.FormTest - Set state
-14:05:33.541 [main] INFO  org.example.testing.FormTest - Start test
-14:05:41.972 [main] INFO  org.example.testing.FormTest - Set first name
-14:05:42.667 [main] INFO  org.example.testing.FormTest - Set gender
-14:07:13.391 [main] INFO  org.example.testing.FormTest - Start test
-14:07:21.009 [main] INFO  org.example.testing.FormTest - Set first name
-14:07:21.888 [main] INFO  org.example.testing.FormTest - Set gender
-14:09:01.954 [main] INFO  org.example.testing.FormTest - Start test
-14:09:09.562 [main] INFO  org.example.testing.FormTest - Set first name
-14:09:10.185 [main] INFO  org.example.testing.FormTest - Set gender
-14:09:44.454 [main] INFO  org.example.testing.FormTest - Start test
-14:09:51.280 [main] INFO  org.example.testing.FormTest - Set first name
-14:09:51.960 [main] INFO  org.example.testing.FormTest - Set gender
-14:13:45.237 [main] INFO  org.example.testing.FormTest - Start test
-14:13:52.632 [main] INFO  org.example.testing.FormTest - Set first name
-14:13:53.415 [main] INFO  org.example.testing.FormTest - Set gender
+12:07:06.371 [main] INFO  org.example.testing.FormTest - Start test
+12:09:06.928 [main] INFO  org.example.testing.FormTest - Start test
+12:11:47.742 [main] INFO  org.example.testing.FormTest - Start test
+12:12:32.384 [main] INFO  org.example.testing.FormTest - Start test
+12:13:25.445 [main] INFO  org.example.testing.FormTest - Start test
+12:13:34.715 [main] INFO  org.example.testing.FormTest - Form submitted
+12:13:42.446 [main] INFO  org.example.testing.FormTest - Test passed
+12:19:20.797 [main] INFO  org.example.testing.FormTest - Start test
+12:19:33.515 [main] INFO  org.example.testing.FormTest - Form submitted
+12:19:38.490 [main] INFO  org.example.testing.FormTest - Test passed
+12:22:23.146 [main] INFO  org.example.testing.FormTest - Start test
+12:22:32.698 [main] INFO  org.example.testing.FormTest - Form submitted
+12:22:32.699 [main] INFO  org.example.testing.FormTest - Form submitted
+12:22:32.798 [main] INFO  org.example.testing.FormTest - Test passed
+12:28:06.826 [main] INFO  org.example.testing.FormTest - Start test
+12:28:15.424 [main] INFO  org.example.testing.FormTest - Form submitted
+12:28:15.425 [main] INFO  org.example.testing.FormTest - Form submitted
+12:30:38.426 [main] INFO  org.example.testing.FormTest - Start test
+12:31:00.322 [main] INFO  org.example.testing.FormTest - Start test
+12:31:07.868 [main] INFO  org.example.testing.FormTest - Form submitted
+12:31:07.869 [main] INFO  org.example.testing.FormTest - Form submitted
+12:31:28.828 [main] INFO  org.example.testing.FormTest - Start test
+12:31:37.376 [main] INFO  org.example.testing.FormTest - Form submitted
+12:31:37.376 [main] INFO  org.example.testing.FormTest - Form submitted
+12:35:08.046 [main] INFO  org.example.testing.FormTest - Start test
+12:35:16.100 [main] INFO  org.example.testing.FormTest - Form submitted and modal opened
+12:35:57.216 [main] INFO  org.example.testing.FormTest - Start test
+12:36:06.168 [main] INFO  org.example.testing.FormTest - Form submitted and modal opened
