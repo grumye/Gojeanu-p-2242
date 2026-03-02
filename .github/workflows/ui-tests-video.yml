@@ -1,0 +1,59 @@
+name: UI tests with video
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-and-record:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Install video tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb ffmpeg
+
+      - name: Run tests + record screen (Xvfb)
+        run: |
+          mkdir -p artifacts
+
+          # Виртуальный экран
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          echo "DISPLAY=:99" >> $GITHUB_ENV
+
+          # Запись экрана
+          ffmpeg -y \
+            -video_size 1920x1080 \
+            -framerate 25 \
+            -f x11grab -i :99 \
+            -codec:v libx264 -pix_fmt yuv420p \
+            artifacts/test-run.mp4 > /dev/null 2>&1 &
+          FF_PID=$!
+
+          # Запуск тестов
+          mvn -q test || TEST_EXIT=$?
+
+          # Остановка записи
+          kill $FF_PID || true
+
+          # Вернуть код ошибки тестов (если упали)
+          exit ${TEST_EXIT:-0}
+
+      - name: Upload video artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-video
+          path: artifacts/test-run.mp4
