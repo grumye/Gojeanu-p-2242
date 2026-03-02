@@ -20,27 +20,25 @@ jobs:
           java-version: "17"
           cache: maven
 
-      - name: Install video tools
+      - name: Install Chrome + video tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb ffmpeg x11-utils
+          sudo apt-get install -y xvfb ffmpeg x11-utils google-chrome-stable
 
-      - name: Run tests + record screen (Xvfb)
+      - name: Run tests and record video
         env:
           CI: "true"
           DISPLAY: ":99"
         run: |
           mkdir -p artifacts
 
-          # 1) Virtual display
+          # 1) Start virtual display
           Xvfb :99 -screen 0 1920x1080x24 -ac +extension RANDR > artifacts/xvfb.log 2>&1 &
-          sleep 2
+          sleep 3
 
-          # 2) Check display
           echo "DISPLAY=$DISPLAY"
-          xdpyinfo -display :99 > artifacts/xdpyinfo.txt 2>&1 || true
 
-          # 3) Start recording (:99.0!)
+          # 2) Start recording
           ffmpeg -y \
             -video_size 1920x1080 \
             -framerate 25 \
@@ -49,16 +47,22 @@ jobs:
             artifacts/test-run.mp4 > artifacts/ffmpeg.log 2>&1 &
           FF_PID=$!
 
-          sleep 2
+          # Give recording time to start
+          sleep 3
 
-          # 4) Run tests (do not fail job, we want video)
-          mvn -q test || true
+          # 3) Run tests (background so recording continues)
+          mvn -q test > artifacts/mvn.log 2>&1 &
+          MVN_PID=$!
 
-          sleep 2
+          # Wait until tests finish
+          wait $MVN_PID || true
 
-          # 5) Stop recording
-          kill $FF_PID || true
-          sleep 1
+          # Keep recording a little after tests finish
+          sleep 3
+
+          # 4) Stop recording gracefully
+          kill -INT $FF_PID || true
+          wait $FF_PID || true
 
       - name: Upload artifacts (video + logs)
         if: always()
