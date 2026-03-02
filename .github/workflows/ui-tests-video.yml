@@ -20,7 +20,7 @@ jobs:
           java-version: "17"
           cache: maven
 
-      - name: Install Chrome + video tools
+      - name: Install tools
         run: |
           sudo apt-get update
           sudo apt-get install -y xvfb ffmpeg x11-utils google-chrome-stable
@@ -32,13 +32,19 @@ jobs:
         run: |
           mkdir -p artifacts
 
-          # 1) Start virtual display
+          # 1) Virtual display
           Xvfb :99 -screen 0 1920x1080x24 -ac +extension RANDR > artifacts/xvfb.log 2>&1 &
-          sleep 3
+          sleep 2
+          xdpyinfo -display :99 > artifacts/xdpyinfo.txt 2>&1 || true
 
-          echo "DISPLAY=$DISPLAY"
+          # 2) Start tests first (so Chrome starts while we prepare recording)
+          mvn -q test > artifacts/mvn.log 2>&1 &
+          MVN_PID=$!
 
-          # 2) Start recording
+          # 3) Wait a bit so browser appears early in the recording
+          sleep 5
+
+          # 4) Start recording
           ffmpeg -y \
             -video_size 1920x1080 \
             -framerate 25 \
@@ -47,20 +53,13 @@ jobs:
             artifacts/test-run.mp4 > artifacts/ffmpeg.log 2>&1 &
           FF_PID=$!
 
-          # Give recording time to start
-          sleep 3
-
-          # 3) Run tests (background so recording continues)
-          mvn -q test > artifacts/mvn.log 2>&1 &
-          MVN_PID=$!
-
-          # Wait until tests finish
+          # 5) Wait until tests finish
           wait $MVN_PID || true
 
-          # Keep recording a little after tests finish
+          # 6) Record a little after end
           sleep 3
 
-          # 4) Stop recording gracefully
+          # 7) Stop recording gracefully
           kill -INT $FF_PID || true
           wait $FF_PID || true
 
